@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-.hidden {
-}
-
 body {
   background-color: rgb(255, 153, 230);
   height: 100vh;
@@ -27,12 +24,12 @@ body {
   z-index: 0;
   animation: envelope 2s linear infinite;
 }
-.wrapper.hidden {
+.wrapper.show {
   right: 0;
-  animation: hidden 2s linear;
+  animation: show 2s linear;
 }
 
-@keyframes hidden {
+@keyframes show {
   0% {
     transform: translateX(500px);
   }
@@ -87,6 +84,7 @@ body {
   animation: heart 0.6s linear infinite;
   z-index: 5;
 }
+
 @keyframes heart {
   0% {
     transform: rotate(-45deg) scale(1.07);
@@ -195,5 +193,81 @@ body {
   }
   50% {
     transform: scale(1);
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: white;
+  height: 100px;
+  width: 100px;
+}
+.cloud:before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: white;
+  top: 0;
+  right: -17px;
+  box-shadow: 10px 10px 90px white;
+  border-radius: 50px;
+}
+
+.first-cloud {
+  width: 514px;
+  height: 292px;
+  background: #acd4e1;
+  border-radius: 257px/146px;
+  top: -150px;
+  right: -241px;
+  z-index: 1;
+  position: absolute;
+}
+.second-cloud {
+  width: 526px;
+  height: 252px;
+  background: #acd4e1;
+  border-radius: 263px/126px;
+  top: -178px;
+  right: 74px;
+  z-index: 1;
+  position: absolute;
+}
+.third-cloud {
+  width: 476px;
+  height: 292px;
+  background: #c8e3ec;
+  border-radius: 238px/146px;
+  top: -96px;
+  right: -214px;
+  position: absolute;
+}
+.fourth-cloud {
+  width: 486px;
+  height: 252px;
+  background: #c8e3ec;
+  border-radius: 243px/126px;
+  top: -128px;
+  right: 86px;
+  position: absolute;
+}
+
+.hearts {
+  font-size: 23px;
+  font-weight: bold;
+  position: fixed;
+  top: -1vh;
+  left: 0;
+  transform: translateY(0%);
+  animation: fall 3s ease-in infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(250vh);
   }
 }
